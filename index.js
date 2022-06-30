@@ -1,12 +1,10 @@
-const express = require('express')
-const app = express()
+const Joi = require('joi');
+const genres = require('./routes/genres');
+const express = require('express');
+const app = express();
 
-const PORT  = process.env.PORT || 4000
+app.use(express.json());
+app.use('/api/genres', genres);
 
-app.get('/',(req,res) => {
-    res.status(200).send('Hello There!')
-})
-
-app.listen(PORT,() => {
-    console.log(`Listening on port ${PORT}`);
-})
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
