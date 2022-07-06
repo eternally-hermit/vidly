@@ -5,6 +5,8 @@ const customers = require('./routes/customers')
 const express = require('express');
 const app = express();
 
+// This is a commment
+
 mongoose.connect('mongodb://localhost/vidly')
     .then(() => console.log('Connected to MongoDB..!'))
     .catch((err) => console.error(`Couldn't connect to MongoDB..!`))
